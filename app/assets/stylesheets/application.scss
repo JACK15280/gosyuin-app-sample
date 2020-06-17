@@ -1,4 +1,7 @@
-@import "posts";
 @import "reset";
+@import "config/colors";
+@import "modules/posts";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/users";
+@import "modules/flash";

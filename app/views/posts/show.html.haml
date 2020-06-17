@@ -1,10 +1,6 @@
 .wrapper
   = render "side-bar"
   .main-space
-    .main-space__info
-      .main-space__info--new-post
-      = link_to new_post_path, class: "main-space__info--new-post__btn" do
-        %i.fas.fa-plus-circle
     .content-page
       .content-page__image
         = image_tag @post.image.url
@@ -13,7 +9,8 @@
       .content-page__content
         = @post.content
 
-    .btn
-      = link_to "編集", edit_post_path(@post.id), class: "btn__edit"
-      = link_to "削除", post_path(@post.id), method: :delete, class: "btn__delete"
-      = link_to "ホーム", root_path, class: "btn__home"
+      .btn
+        = link_to "ホーム", root_path, class: "btn__home"
+        - if user_signed_in? && current_user.id == @post.user_id
+          = link_to "編集", edit_post_path(@post.id), class: "btn__edit"
+          = link_to "削除", post_path(@post.id), method: :delete, class: "btn__delete"
