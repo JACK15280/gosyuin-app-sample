@@ -2,14 +2,6 @@
   .side-bar__header
     %h1 御朱印
   .side-bar__group-list
-    %ul.side-bar__group-list__title
-      %li
-        = link_to "御朱印帳", "#", class: "side-bar__group-list__title-name"
-      %li
-        = link_to "埼玉県", "#", class: "side-bar__group-list__title-name"
-      %li
-        = link_to "群馬県", "#", class: "side-bar__group-list__title-name"
-      %li
-        = link_to "秩父三十四観音", "#", class: "side-bar__group-list__title-name"
-      %li
-        = link_to "坂東三十三観音", "#", class: "side-bar__group-list__title-name"
+    - @groups.each do |group|
+      .side-bar__group-list__title
+        = link_to group.name, group_path(group.id), class: "side-bar__group-list__title-name"

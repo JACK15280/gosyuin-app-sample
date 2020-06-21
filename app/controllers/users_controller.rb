@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    @groups = Group.all
     @user = User.find(params[:id])
     @posts = @user.posts
   end
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
 
   private
   def user_params

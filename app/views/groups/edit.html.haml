@@ -1,0 +1,6 @@
+グループ編集
+
+= form_for @group do |f|
+  = f.text_field :name, placeholder: "グループ名を入力してください"
+  = f.collection_check_boxes :post_ids, Post.all, :id, :title
+  = f.submit "保存"

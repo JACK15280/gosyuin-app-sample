@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+  before_action :set_group
 
   def index
     @posts = Post.includes(:user)
@@ -9,12 +11,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to root_path
+    if Post.create(post_params)
+      redirect_to root_path, notice: '御朱印が投稿されました'
+    else
+      flash.now[:alert] = '内容を入力してください。'
+      render :new
+    end
   end
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   def edit
@@ -36,5 +44,13 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :content, :image).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+
+  def set_group
+    @groups = Group.all
   end
 end

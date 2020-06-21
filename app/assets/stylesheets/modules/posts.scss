@@ -53,6 +53,11 @@
       right: 0;
     }
   }
+  &__group-name {
+    font-size: 30px;
+    color: firebrick;
+    margin: 35px;
+  }
   &__group-list {
     background-size: 20px 20px;
     background-color: #3F51B5;
@@ -74,9 +79,6 @@
     &__title-name {
       text-decoration: none;
       color: greenyellow;
-    }
-    &__title li {
-      padding-bottom: 30px;
     }
   }
 }
@@ -123,7 +125,7 @@
       transform: translate(-50%, -50%);
       &__btn {
         padding: 0.75em 2em;
-        margin: 20px 0 20px 400px;
+        margin: 20px 0 20px 200px;
         color: #2194E0;
         border: 2px solid #2194E0;
         font-size: 24px;
@@ -175,7 +177,7 @@
       &__name {
         font-size: 15px;
         text-decoration: none;
-        color: orange;
+        color: green;
         padding-left: 10px;
       }
     }
@@ -252,7 +254,7 @@
 
 .content-page {
   &__image {
-    padding: 50px 0 30px 300px;
+    padding: 50px 0 30px 320px;
   }
   &__text {
     padding: 30px 0 30px 400px;
@@ -260,7 +262,7 @@
   }
   &__content {
     overflow: scroll;
-    margin: 0 0 20px 250px;
+    margin: 0 0 20px 260px;
     border: 1px solid;
     height: 200px;
     width: 500px;
@@ -322,5 +324,32 @@
   &__delete:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+
+.container {
+  background-color: pink;
+  width: 1000px;
+  margin-left: 50px;
+  &__text {
+    width: 400px;
+    margin: 20px 0 0 250px;
+  }
+  &__comments {
+    margin-left: 300px;
+    font-size: 20px;
+    &--name {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+.maps {
+  font-size: 30px;
+  margin-left: 400px;
+  &__icon {
+    font-size: 50px;
+    color: green;
   }
 }

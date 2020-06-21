@@ -1,0 +1,20 @@
+.wrapper
+  = render "posts/side-bar"
+  .main-space
+    .main-space__info
+      .side-bar__group-name
+        = "グループ名：#{@group.name}"
+      = link_to "グループ作成", new_group_path, class: "btn__edit"
+      = link_to "グループ編集", edit_group_path(@group.id), class: "btn__edit"
+      = link_to "ホーム", root_path, class: "btn__home"
+      .main-space__info--new-post
+      = link_to new_post_path, class: "main-space__info--new-post__btn" do
+        %i.fas.fa-plus-circle
+    .user-show
+      - @posts.each do |post|
+        .main-space__contents--title
+          = image_tag post.image.url, class: "main-space__contents--title__image"
+          = link_to post.title, post_path(post.id), class: "main-space__contents--title__text"
+
+
+
