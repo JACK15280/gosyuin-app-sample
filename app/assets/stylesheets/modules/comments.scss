@@ -1,0 +1,21 @@
+.container {
+  background-color: pink;
+  width: 1000px;
+  margin-left: 50px;
+  &__text {
+    width: 400px;
+    margin: 20px 0 0 250px;
+  }
+  &__btn {
+    border: 1px solid blue;
+    cursor: pointer;
+  }
+  &__comments {
+    margin-left: 300px;
+    font-size: 20px;
+    &--name {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

@@ -259,6 +259,7 @@
   &__text {
     padding: 30px 0 30px 400px;
     font-size: 50px;
+    width: 250px;
   }
   &__content {
     overflow: scroll;
@@ -328,28 +329,4 @@
 }
 
 
-.container {
-  background-color: pink;
-  width: 1000px;
-  margin-left: 50px;
-  &__text {
-    width: 400px;
-    margin: 20px 0 0 250px;
-  }
-  &__comments {
-    margin-left: 300px;
-    font-size: 20px;
-    &--name {
-      text-decoration: none;
-      color: black;
-    }
-  }
-}
-.maps {
-  font-size: 30px;
-  margin-left: 400px;
-  &__icon {
-    font-size: 50px;
-    color: green;
-  }
-}
+

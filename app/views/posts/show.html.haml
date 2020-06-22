@@ -13,7 +13,7 @@
       - if current_user
         = form_for [@post, @comment] do |f|
           = f.text_area :text, placeholder: :コメント内容, rows: "2", class: "container__text"
-          = f.submit "コメント", class: "new-content__submit"
+          = f.submit "コメント", class: "container__btn"
       - else
         %p
           ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
