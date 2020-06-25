@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_group
 
   def index
@@ -41,6 +41,10 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @posts = Post.search(params[:keyword]).includes(:user)
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :content, :image).merge(user_id: current_user.id)
@@ -53,4 +57,5 @@ class PostsController < ApplicationController
   def set_group
     @groups = Group.all
   end
+
 end
