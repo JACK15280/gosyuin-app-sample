@@ -46,6 +46,6 @@ function codeAddress(){
   });
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoWbnHlDaAOJv-ki3R9XggABqM5aO5ZqU&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
 
 <a class= btn__home href="/"><p>ホーム</p></a>

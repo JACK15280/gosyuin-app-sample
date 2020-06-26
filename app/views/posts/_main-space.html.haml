@@ -12,8 +12,8 @@
   .main-space__contents
     .main-space__search
       = form_tag posts_searches_path, local: true, method: :get do
-        = text_field_tag :keyword
-        = submit_tag "検索"
+        = text_field_tag :keyword, '', class: "main-space__search--text"
+        = submit_tag "検索", class: "main-space__search--btn"
     - @posts.each do |post|
       .main-space__contents--title
         = image_tag post.image.url, class: "main-space__contents--title__image"
