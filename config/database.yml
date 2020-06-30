@@ -52,3 +52,10 @@ production:
   database: gosyuin-app_production
   username: gosyuin-app
   password: <%= ENV['GOSYUIN-APP_DATABASE_PASSWORD'] %>
+
+production:
+  
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

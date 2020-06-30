@@ -31,8 +31,12 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to post_path(post.id)
+    if post.update(post_params)
+      redirect_to post_path(post.id), notice: '御朱印の編集が完了しました'
+    else
+      flash.now[:alert] = '内容を入力してください。'
+      render :edit
+    end
   end
 
   def destroy

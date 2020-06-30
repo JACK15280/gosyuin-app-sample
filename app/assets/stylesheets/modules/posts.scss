@@ -54,9 +54,9 @@
     }
   }
   &__group-name {
-    font-size: 30px;
+    font-size: 20px;
     color: firebrick;
-    margin: 35px;
+    margin: 40px 20px 0 0;
   }
   &__group-list {
     background-size: 20px 20px;
@@ -98,15 +98,15 @@
     }
     &--btn {
       position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-left: solid 4px #668ad8;
-  border-right: solid 4px #668ad8;
-  color: #668ad8;
-  background: #e1f3ff;
-  transition: .4s;
+      display: inline-block;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      border-left: solid 4px #668ad8;
+      border-right: solid 4px #668ad8;
+      color: #668ad8;
+      background: #e1f3ff;
+      transition: .4s;
     }
     &--btn:hover {
       background: #668ad8;
