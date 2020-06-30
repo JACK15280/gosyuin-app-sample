@@ -1,9 +1,8 @@
 <h2>御朱印を頂いた場所の検索</h2>
 
-<!-- 地名入力用のinputを追加 -->
 <input id="address" type="textbox" placeholder="住所や名前を入力">
 
-<!-- buttonをクリックしたらcodeAddressを実行-->
+
 <input type="button" value="検索" onclick="codeAddress()">
 <div id='map'>
 </div>
@@ -18,7 +17,6 @@ let map
 let geocoder
 
 function initMap(){
-  // geocoderを初期化
   geocoder = new google.maps.Geocoder()
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -28,10 +26,9 @@ function initMap(){
 }
 
 function codeAddress(){
-  // 入力を取得
+
   let inputAddress = document.getElementById('address').value;
 
-  // geocodingしたあとmapを移動
   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
     if (status == 'OK') {
       map.setCenter(results[0].geometry.location);
