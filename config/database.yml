@@ -44,18 +44,13 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
+
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: gosyuin-app_production
   username: gosyuin-app
   password: <%= ENV['GOSYUIN-APP_DATABASE_PASSWORD'] %>
-
-production:
-  
-  <<: *default
   adapter: postgresql
   encoding: unicode
   pool: 5
